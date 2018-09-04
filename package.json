@@ -1,13 +1,16 @@
 {
   "name": "dipi",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm run lib.build && ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "lib.build": "ng build --prod dipi",
+    "lib.pack": "cd dist/dipi && npm pack",
+    "package": "npm run lib.build && npm run lib.pack"
   },
   "private": true,
   "dependencies": {
