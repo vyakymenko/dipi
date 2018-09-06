@@ -10,7 +10,8 @@ import { DipiModule } from 'dipi';
     AppComponent
   ],
   imports: [
-    BrowserModule, DipiModule
+    BrowserModule,
+    DipiModule
   ],
   providers: [],
   bootstrap: [AppComponent]
