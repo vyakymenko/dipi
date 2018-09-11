@@ -9,6 +9,7 @@ export * from './lib/dipi.module';
 export * from './lib/pipes/join.pipe';
 export * from './lib/pipes/filter.pipe';
 export * from './lib/pipes/safe.pipe';
+export * from './lib/pipes/search-filter.pipe';
 
 /**
  * Directives

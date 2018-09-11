@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { JoinPipe } from './pipes/join.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { SafePipe } from './pipes/safe.pipe';
+import { SearchFilterPipe } from './pipes/search-filter.pipe';
 
 /**
  * Directives
@@ -17,11 +18,11 @@ import { OffsetHeightDirective } from './directives/offset-height.directive';
 @NgModule({
   imports: [],
   declarations: [
-    JoinPipe, FilterPipe, SafePipe,
+    JoinPipe, FilterPipe, SafePipe, SearchFilterPipe,
     LazyForDirective, DebounceDirective, OffsetHeightDirective
   ],
   exports: [
-    JoinPipe, FilterPipe, SafePipe,
+    JoinPipe, FilterPipe, SafePipe, SearchFilterPipe,
     LazyForDirective, DebounceDirective, OffsetHeightDirective
   ]
 })
