@@ -5,9 +5,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(values: any[], criteria: boolean | undefined): any[] {
+  /**
+   * values {any[]} - Array of values with filter property, by default it's `available`.
+   * criteria {string} - Property name for filtering.
+   */
+  transform(values: any[], criteria: string | undefined): any[] {
     return values.filter(e => criteria !== undefined
-      ? criteria
-      : !e.available);
+      ? e.hasOwnProperty(criteria) ? e[criteria] : false
+      : e.available);
   }
 }

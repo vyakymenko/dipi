@@ -18,10 +18,10 @@
   </li>
 </ul>
 
-
-<dipi-dipi></dipi-dipi>
-
 <p>{{ joinText | join }}</p>
 
-<h3 [style]="'color: red' | safe: 2">I'm red!</h3>
-
+<ul style="height: 50px; overflow-y: auto;">
+  <li style="min-height: 50px" *lazyFor="let k of joinText">
+    {{ k }}
+  </li>
+</ul>
