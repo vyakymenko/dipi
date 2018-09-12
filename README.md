@@ -33,9 +33,31 @@ export class AppModule { }
 
 Website documentation is in development.
 
-## Examples
+### Pipes
 
-Stack blitz examples.
+#### Join `| join`
+<details>
+  <summary>How to use</summary>
+  <p>
+
+  #### Default value
+  
+  ```html
+    <p>{{ textList | join }}</p> <!-- Dipi,is,working! -->
+  ```
+  
+  #### Custom value
+  
+  ```html
+      <p>{{ textList | join: ' ' }}</p> <!-- Dipi is working! -->
+  ```
+  
+  [Stackblitz](https://stackblitz.com/edit/dipi-pipe-join)
+  
+  </p>
+</details>
+
+### Directives
 
 ## Contributing
 
