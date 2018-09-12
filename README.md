@@ -1,27 +1,46 @@
 # Dipi
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
+Directives and Pipes Angular library that provide a huge pack of useful solutions for Angular developers.
 
-## Development server
+## Quick Start
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Install `Dipi` library:
+```sh
+$ npm i dipi -D
+```
 
-## Code scaffolding
+2. Import `DipiModule` inside your Angular module:
+```ts
+....
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+import { DipiModule } from 'dipi';
 
-## Build
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    DipiModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Documentation
 
-## Running unit tests
+Website documentation is in development.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Examples
 
-## Running end-to-end tests
+Stack blitz examples.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Contributing
 
-## Further help
+Please read [contributing guidelines here](./CONTRIBUTING.md).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## License
+
+MIT
