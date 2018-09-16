@@ -52,8 +52,8 @@ export class LazyForDirective implements DoCheck, OnInit {
       this.lazyForContainer = this.templateElem.parentElement;
     }
 
-    //Adding an event listener will trigger ngDoCheck whenever the event fires so we don't actually need to call
-    //update here.
+    // Adding an event listener will trigger ngDoCheck whenever the event fires so we don't actually need to call
+    // update here.
     this.lazyForContainer.addEventListener('scroll', () => {
       this.lastChangeTriggeredByScroll = true;
     });
@@ -77,11 +77,11 @@ export class LazyForDirective implements DoCheck, OnInit {
     }
   }
 
-  //Preconditions:
+  // Preconditions:
   //  this.list is an array
   private update() {
 
-    //Can't run the first update unless there is an element in the list
+    // Can't run the first update unless there is an element in the list
     if (this.list.length === 0) {
       this.vcr.clear();
       if (!this.firstUpdate) {
@@ -99,12 +99,12 @@ export class LazyForDirective implements DoCheck, OnInit {
       ? parseInt(this.lazyForContainer.style.height, 10) : this.lazyForContainer.clientHeight;
     const scrollTop = this.lazyForContainer.scrollTop;
 
-    //The height of anything inside the container but above the lazyFor content;
+    // The height of anything inside the container but above the lazyFor content;
     const fixedHeaderHeight =
       (this.beforeListElem.getBoundingClientRect().top - this.beforeListElem.scrollTop) -
       (this.lazyForContainer.getBoundingClientRect().top - this.lazyForContainer.scrollTop);
 
-    //This needs to run after the scrollTop is retrieved.
+    // This needs to run after the scrollTop is retrieved.
     this.vcr.clear();
 
     let listStartI = Math.floor((scrollTop - fixedHeaderHeight) / this.itemHeight);
@@ -136,9 +136,8 @@ export class LazyForDirective implements DoCheck, OnInit {
     }
 
     if (this.itemHeight === undefined) {
-      // this.itemHeight = sampleItemElem.clientHeight;
-      this.itemHeight = parseInt(window.getComputedStyle(sampleItemElem).minHeight, 10);
-
+      this.itemHeight = sampleItemElem.clientHeight;
+      // this.itemHeight = parseInt(window.getComputedStyle(sampleItemElem).minHeight, 10);
     }
 
     if (this.itemTagName === undefined) {
@@ -149,7 +148,7 @@ export class LazyForDirective implements DoCheck, OnInit {
     this.templateElem.parentElement.insertBefore(this.beforeListElem, this.templateElem);
 
     this.afterListElem = document.createElement(this.itemTagName);
-    //This inserts after the templateElem. see http://stackoverflow.com/a/4793630/373655 for details
+    // This inserts after the templateElem. see http://stackoverflow.com/a/4793630/373655 for details
     this.templateElem.parentElement.insertBefore(this.afterListElem, this.templateElem.nextSibling);
 
     if (this.itemTagName.toLowerCase() === 'li') {

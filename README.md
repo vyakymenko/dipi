@@ -1,6 +1,6 @@
 # Dipi
 
-Directives and Pipes Angular library that provide a huge pack of useful solutions for Angular developers.
+A simple Angular library that contain a huge, useful pack of Directives and Pipes for Angular developers.
 
 ## Quick Start
 
@@ -12,7 +12,6 @@ $ npm i dipi -D
 2. Import `DipiModule` inside your Angular module:
 ```ts
 ....
-
 import { DipiModule } from 'dipi';
 
 @NgModule({
@@ -35,20 +34,21 @@ Website documentation is in development.
 
 ### Pipes
 
-#### Join `| join`
+#### join `| join`
+
 <details>
-  <summary>How to use</summary>
+  <summary>Example</summary>
   <p>
 
   #### Default value
   
-  ```html
+  ```angular2html
     <p>{{ textList | join }}</p> <!-- Dipi,is,working! -->
   ```
   
   #### Custom value
   
-  ```html
+  ```angular2html
       <p>{{ textList | join: ' ' }}</p> <!-- Dipi is working! -->
   ```
   
@@ -57,7 +57,293 @@ Website documentation is in development.
   </p>
 </details>
 
+#### safe `| safe`
+<details>
+  <summary>Example</summary>
+  <p>
+
+  Default value: `url`. Possible values: `'html' | 'css' | 'js' | 'url' | 'res-url'`
+
+  #### Default value
+  
+  ```angular2html
+    <iframe [src]="'https://www.w3schools.com' | safe"></iframe>
+  ```
+  
+  #### Custom value
+  
+  ```angular2html
+    <p [style]="'color: red' | safe: 'style'">Red text</p>
+  ```
+  
+  [Stackblitz](https://stackblitz.com/edit/dipi-seed-safe)
+  
+  </p>
+</details>
+
+#### filter `| filter`
+<details>
+  <summary>Example</summary>
+  <p>
+
+  #### Default value
+    
+  ```ts
+    textList = [
+      {
+        name: 'Dipi',
+        available: true,
+      },{
+        name: 'is',
+        available: true,
+      },{
+        name: 'working!',
+        available: true,
+      },{
+        name: 'Hide me',
+        available: false
+      }
+    ]
+  ```
+  
+  ```angular2html
+    <p>
+      <ng-container *ngFor="let node of textList | filter">
+        <span>{{ node.name }} </span>
+      </ng-container>
+    </p>
+  ```
+  
+  #### Custom value
+  
+  ```angular2html
+    <p>
+      <ng-container *ngFor="let node of textList | filter : 'name'">
+        <span>{{ node.name }} </span>
+      </ng-container>
+    </p>
+  ```
+  
+  [Stackblitz](https://stackblitz.com/edit/dipi-seed-filter)
+  
+  </p>
+</details>
+
+#### searchFilter `| searchFilter`
+<details>
+  <summary>Example</summary>
+  <p>
+    
+  ```ts
+    search = 'Dipi';
+  
+    textList = [
+      {
+        name: 'Dipi',
+        available: true,
+      },{
+        name: 'is',
+        available: true,
+      },{
+        name: 'working!',
+        available: true,
+      },{
+        name: 'Hide me',
+        available: false
+      }
+    ]
+  ```
+  
+  ```angular2html
+    <p>
+      <ng-container *ngFor="let node of textList | searchFilter: search">
+        <span>{{ node.name }} </span>
+      </ng-container>
+    </p>
+  ```
+  
+  [Stackblitz](https://stackblitz.com/edit/dipi-seed-search-filter)
+  
+  </p>
+</details>
+
 ### Directives
+
+#### debounce `[debounce]`
+<details>
+  <summary>Example</summary>
+  <p>
+  
+  `app.component.ts`
+  
+  ```ts
+  import { Component } from '@angular/core';
+  
+  @Component({
+    selector: 'my-app',
+    templateUrl: './app.component.html',
+    styleUrls: [ './app.component.css' ]
+  })
+  export class AppComponent  {
+    name = 'Angular';
+    search = '';
+  
+    textList = [
+      {
+        name: 'Dipi',
+        available: true,
+      },{
+        name: 'is',
+        available: true,
+      },{
+        name: 'working!',
+        available: true,
+      },{
+        name: 'Hide me',
+        available: false
+      }
+    ]
+  
+    filteredList: any[];
+  
+    constructor() {
+      this.filteredList = this.textList;
+    }
+  
+    filterSearch(): void {
+      this.filteredList = this.textList.filter((e: any) => e.name.includes(this.search));
+    }
+  }
+  ```
+
+  #### Default value
+  
+  ```angular2html
+  <h2>Dipi Seed</h2>
+  <input type="search"
+         [debounce]
+         [(ngModel)]="search"
+         (debouceEvent)="filterSearch()">
+  <p>
+    <ng-container *ngFor="let node of filteredList">
+      <span>
+       {{ node.name }}
+      </span>
+    </ng-container>
+  </p>
+  ```
+  
+  #### Custom value
+  
+  ```angular2html
+  <h2>Dipi Seed</h2>
+    <input type="search"
+           [debounce]="2000"
+           [(ngModel)]="search"
+           (debouceEvent)="filterSearch()">
+    <p>
+      <ng-container *ngFor="let node of filteredList">
+        <span>
+         {{ node.name }}
+        </span>
+      </ng-container>
+    </p>
+  ```
+  
+  [Stackblitz](https://stackblitz.com/edit/dipi-seed-debounce)
+  
+  </p>
+</details>
+
+#### lazyFor `*lazyFor`
+<details>
+  <summary>Example</summary>
+  <p>
+  
+  List of items
+  ```ts
+    textList = [
+      {
+        name: 'Dipi',
+        available: true,
+      },{
+        name: 'is',
+        available: true,
+      },{
+        name: 'working!',
+        available: true,
+      },{
+        name: 'Hide me',
+        available: false
+      },{
+        name: 'Foo',
+        available: false
+      },{
+        name: 'Bar',
+        available: false
+      },{
+        name: 'Buz',
+        available: false
+      }
+    ]
+  ```
+  Component css
+  ```css
+    ul {
+      height: 100px;
+      overflow-y: auto;
+    }
+    
+    ul li {
+      min-height: 35px;
+    }
+  ```
+  
+  Directive usage
+  ```angular2html
+    <ul>
+      <li *lazyFor="let k of textList">
+        {{ k.name }}
+      </li>
+    </ul>
+  ```
+  
+  [Stackblitz](https://stackblitz.com/edit/dipi-seed-lazy-for)
+  
+  </p>
+</details>
+
+#### offsetHeight `offsetHeight`
+<details>
+  <summary>Example</summary>
+  <p>
+  
+  ```angular2html
+   <h2>
+    Dipi
+   </h2>
+   <div offsetHeight>
+     Block
+   </div>
+  ```
+  
+  [Stackblitz](https://stackblitz.com/edit/dipi-seed-offset-height)
+  
+  </p>
+</details>
+
+## In Development
+
+1. `Pipes:` `| distinct` `| formatter` `| watch`
+
+2. `Directives:`
+
+3. Website documentation
+
+## Help
+
+I will be so glad if you will create an issue with your own useful `Directive` or `Pipe` that will be used by any Angular developer.
+Knowledge sharing is our strength!
 
 ## Contributing
 

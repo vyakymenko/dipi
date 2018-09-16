@@ -1,7 +1,7 @@
 {
   "name": "dipi",
-  "version": "1.0.0-alpha.1",
-  "description": "An Angular Library that provide for you useful directives and pipes that you can use inside your project.",
+  "version": "1.0.0",
+  "description": "A simple Angular library that contain a huge, useful pack of Directives and Pipes for Angular developers",
   "keywords": ["Angular", "Library", "Directives", "Pipes"],
   "license" : "MIT",
   "repository": {

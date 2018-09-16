@@ -10,7 +10,7 @@ export class SafePipe implements PipeTransform {
 
   constructor(private sanitizer: DomSanitizer) {}
 
-  transform(value: string, type: ContentType): SafeHtml | SafeStyle | SafeScript | SafeUrl | SafeResourceUrl {
+  transform(value: string, type: ContentType = 'url'): SafeHtml | SafeStyle | SafeScript | SafeUrl | SafeResourceUrl {
 
     switch (type) {
       case 'html':
