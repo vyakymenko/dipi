@@ -344,7 +344,7 @@ ___
 
 ## Help
 
-I will be so glad if you will create an issue with your own useful `Directive` or `Pipe` that will be used by any Angular developer.
+I will be so glad if you will create an issue with your own useful `Directive` or `Pipe` that will be used by other Angular developers  .
 Knowledge sharing is our strength!
 
 ## Contributing
