@@ -33,6 +33,7 @@ export class AppModule { }
 Website documentation is in development.
 
 ### Pipes
+___
 
 #### join `| join`
 
@@ -168,6 +169,7 @@ Website documentation is in development.
 </details>
 
 ### Directives
+___
 
 #### debounce `[debounce]`
 <details>
