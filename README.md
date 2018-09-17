@@ -48,13 +48,13 @@ ___
 
   #### Default value
   
-  ```angular2html
+  ```html
     <p>{{ textList | join }}</p> <!-- Dipi,is,working! -->
   ```
   
   #### Custom value
   
-  ```angular2html
+  ```html
       <p>{{ textList | join: ' ' }}</p> <!-- Dipi is working! -->
   ```
   
@@ -72,13 +72,13 @@ ___
 
   #### Default value
   
-  ```angular2html
+  ```html
     <iframe [src]="'https://www.w3schools.com' | safe"></iframe>
   ```
   
   #### Custom value
   
-  ```angular2html
+  ```html
     <p [style]="'color: red' | safe: 'style'">Red text</p>
   ```
   
@@ -112,7 +112,7 @@ ___
     ]
   ```
   
-  ```angular2html
+  ```html
     <p>
       <ng-container *ngFor="let node of textList | filter">
         <span>{{ node.name }} </span>
@@ -122,7 +122,7 @@ ___
   
   #### Custom value
   
-  ```angular2html
+  ```html
     <p>
       <ng-container *ngFor="let node of textList | filter : 'name'">
         <span>{{ node.name }} </span>
@@ -160,7 +160,7 @@ ___
     ]
   ```
   
-  ```angular2html
+  ```html
     <p>
       <ng-container *ngFor="let node of textList | searchFilter: search">
         <span>{{ node.name }} </span>
@@ -225,7 +225,7 @@ ___
 
   #### Default value
   
-  ```angular2html
+  ```html
   <h2>Dipi Seed</h2>
   <input type="search"
          [debounce]
@@ -242,7 +242,7 @@ ___
   
   #### Custom value
   
-  ```angular2html
+  ```html
   <h2>Dipi Seed</h2>
     <input type="search"
            [debounce]="2000"
@@ -307,7 +307,7 @@ ___
   ```
   
   Directive usage
-  ```angular2html
+  ```html
     <ul>
       <li *lazyFor="let k of textList">
         {{ k.name }}
@@ -325,7 +325,7 @@ ___
   <summary>Example</summary>
   <p>
   
-  ```angular2html
+  ```html
    <h2>
     Dipi
    </h2>
@@ -341,7 +341,7 @@ ___
 
 ## In Development
 
-1. `Pipes:` `| distinct` `| formatter` `| watch`
+1. `Pipes:` `| distinct` `| formatter` `| timer`
 
 2. `Directives:`
 
