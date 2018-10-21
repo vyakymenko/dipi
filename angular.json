@@ -1,14 +1,18 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "projects",
-  "projects": {
+  "newProjectRoot": "packages",
+  "packages": {
     "docs": {
       "root": "",
       "sourceRoot": "doc",
       "projectType": "application",
       "prefix": "app",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -43,7 +47,14 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
             }
           }
         },
@@ -72,7 +83,7 @@
             "tsConfig": "doc/tsconfig.spec.json",
             "karmaConfig": "doc/karma.conf.js",
             "styles": [
-              "styles.scss"
+              "doc/styles.scss"
             ],
             "scripts": [],
             "assets": [
@@ -98,12 +109,18 @@
     "docs-e2e": {
       "root": "e2e/",
       "projectType": "application",
+      "prefix": "",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
             "devServerTarget": "docs:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "docs:serve:production"
+            }
           }
         },
         "lint": {
@@ -121,18 +138,13 @@
       "root": "packages/dipi",
       "sourceRoot": "packages/dipi/src",
       "projectType": "library",
-      "prefix": "enl",
+      "prefix": "",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
             "tsConfig": "packages/dipi/tsconfig.lib.json",
             "project": "packages/dipi/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "project": "packages/dipi/ng-package.prod.json"
-            }
           }
         },
         "test": {
