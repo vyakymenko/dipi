@@ -1,6 +1,6 @@
 {
   "name": "dipi-docs",
-  "version": "1.0.0-alpha.0",
+  "version": "1.1.0-alpha.0",
   "scripts": {
     "ng": "ng",
     "start": "npm run lib.build && ng serve",
@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "docs.build": "ng build --prod docs",
-    "lib.build": "ng build --prod dipi",
+    "lib.build": "ng build dipi",
     "lib.pack": "cd dist/dipi && npm pack",
     "package": "npm run lib.build && npm run lib.pack"
   },

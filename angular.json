@@ -2,7 +2,7 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "packages",
-  "packages": {
+  "projects": {
     "docs": {
       "root": "",
       "sourceRoot": "doc",
@@ -138,7 +138,7 @@
       "root": "packages/dipi",
       "sourceRoot": "packages/dipi/src",
       "projectType": "library",
-      "prefix": "",
+      "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
