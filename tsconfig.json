@@ -14,12 +14,15 @@
       "node_modules/@types"
     ],
     "lib": [
-      "es2017",
+      "es2018",
       "dom"
     ],
     "paths": {
       "dipi": [
         "dist/dipi"
+      ],
+      "dipi/*": [
+        "dist/dipi/*"
       ]
     }
   }
