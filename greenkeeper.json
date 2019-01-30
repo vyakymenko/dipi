@@ -3,7 +3,6 @@
     "default": {
       "packages": [
         "package.json",
-        "packages/dipi/ng-package.json",
         "packages/dipi/package.json"
       ]
     }
