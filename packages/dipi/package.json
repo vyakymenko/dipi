@@ -1,15 +1,8 @@
 {
   "name": "dipi",
-  "version": "1.1.1",
-  "description": "A simple Angular library that contain a huge, useful pack of Directives and Pipes for Angular developers",
-  "keywords": ["Angular", "Library", "Directives", "Pipes"],
-  "license" : "MIT",
-  "repository": {
-    "type" : "git",
-    "url" : "https://github.com/vyakymenko/dipi"
-  },
+  "version": "8.2.0",
   "peerDependencies": {
-    "@angular/common": "^7.0.0",
-    "@angular/core": "^7.0.0"
+    "@angular/common": "^8.2.0",
+    "@angular/core": "^8.2.0"
   }
 }

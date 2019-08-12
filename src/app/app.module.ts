@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { DipiModule } from 'dipi';
@@ -11,6 +12,7 @@ import { DipiModule } from 'dipi';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     DipiModule
   ],
   providers: [],
