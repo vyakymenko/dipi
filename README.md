@@ -1,8 +1,7 @@
-[![Build Status](https://travis-ci.org/vyakymenko/dipi.svg?branch=master)](https://travis-ci.org/vyakymenko/dipi)
-[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
-[![CircleCI](https://circleci.com/gh/vyakymenko/dipi.svg?style=svg)](https://circleci.com/gh/vyakymenko/dipi)
-[![Build status](https://ci.appveyor.com/api/projects/status/f20wus1mp0jqeu9c?svg=true)](https://ci.appveyor.com/project/vyakymenko/dipi)
 [![npm version](https://badge.fury.io/js/dipi.svg)](https://badge.fury.io/js/dipi)
+[![Build Status](https://travis-ci.org/vyakymenko/dipi.svg?branch=master)](https://travis-ci.org/vyakymenko/dipi)
+[![CircleCI](https://circleci.com/gh/vyakymenko/dipi.svg?style=svg)](https://circleci.com/gh/vyakymenko/dipi)
+[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 [![Greenkeeper badge](https://badges.greenkeeper.io/vyakymenko/dipi.svg)](https://greenkeeper.io/)
 
 # Dipi
