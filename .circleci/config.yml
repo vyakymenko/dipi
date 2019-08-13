@@ -3,7 +3,10 @@ jobs:
   build:
     docker:
     # specify the version you desire here
-    - image: circleci/node:8.12
+      - image: circleci/node:10.12-browsers
+        env:
+          - DISPLAY=:99
+          - CHROME_BIN=/usr/bin/google-chrome
 
     working_directory: ~/repo
 
